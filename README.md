@@ -1,4 +1,4 @@
-# ReactNatice-MapBasedGameProjext
+# ReactNatice-Treasure Hunt
 Overview
 
 React Native was used in the development of the location-based smartphone game Treasure Hunt. In quest of hidden treasures, players explore a virtual treasure map superimposed over a real-world map. Players may travel about in real life to find virtual treasures, do missions, and challenge other players by using the geolocation feature on their phone. To provide a captivating user experience, the game incorporates dynamic game mechanics, interactive maps, and real-time multiplayer capability.
