@@ -1,0 +1,55 @@
+ fetch("https://maps.googleapis.com/maps/api/distancematrix/json?origins="+location.coords.latitude+","+location.coords.longitude+"&destinations="+this.state.marker_latitude+","+this.state.marker_longitude+"&key=AIzaSyB98o-gY_l-WaccbWV307eBcr-dcd8ztjw", {
+  method: "Get",
+  headers: {
+    "Content-Type": "application/json",
+  },
+})
+  .then(res => res.json())
+  .then(async response => {
+    console.log(">>>>>>get accurate destination>>>>>>>>");
+    console.log(response);
+    if (response) {
+      let get_distance=response.rows[0].elements[0].distance.text
+      if (get_distance.indexOf("km") >= 0){
+
+ let numb=get_distance.replace(' km','')
+     let number=parseFloat(numb)
+      this.setState({total_distance:number*1000})
+
+      }
+      else
+      {
+let numb=get_distance.replace(' m','')
+     let number=parseFloat(numb)
+      this.setState({total_distance:number})
+console.log("???get_distance in km ???")
+console.log(get_distance)
+console.log("???get_distance without string ???")
+console.log(numb)
+console.log("???get total_distance???")
+console.log(this.state.total_distance)
+
+      }
+
+    
+    }
+    else {
+      Alert.alert(
+        "Sorry",
+        response.message,
+        [
+          {
+            text: "Cancel",
+            style: "cancel"
+          },
+          { text: "OK" }
+        ],
+        { cancelable: false }
+      );
+    }
+
+    this.setState({ loading: true, refreshing: false })
+  })
+  .catch(error => {
+    // alert("Please check internet connection");
+  });

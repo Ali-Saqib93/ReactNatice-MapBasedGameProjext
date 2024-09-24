@@ -1,0 +1,82 @@
+{
+  "expo": {
+    "name": "GrapevineGo",
+    "slug": "GrapevineGo",
+    "version": "1.2.7",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/570fbc47-ad65-4d25-83fc-930021a721d0"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "buildNumber": "1.2.6",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.grapevineGo.grapevineGo",
+      "infoPlist": {
+        "NSCameraUsageDescription": "The application requires access to your camera to allow you to Scan QR Code to play the game.",
+        "NSLocationUsageDescription": "We require your location to display it on a map for functionality."
+      },
+      "config" : {
+        "googleMapsApiKey" : "AIzaSyAZO-tKQkZy9E0hCiV8iEKvsazcBNH4evI"
+      }
+    },
+    "android": {
+      "package": "com.grapevineGo.grapevineGo",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "versionCode": 18,
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "config" : {
+        "googleMaps" : {
+          "apiKey" :"AIzaSyAZO-tKQkZy9E0hCiV8iEKvsazcBNH4evI"
+        }
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "570fbc47-ad65-4d25-83fc-930021a721d0"
+      }
+    },
+    "plugins": [
+      [
+        "./plugins/withAndroidPickFirst",
+        {
+          "paths": [
+            "lib/**/libfbjni.so",
+            "lib/**/libc++_shared.so"
+          ]
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow GrapevineGO to use your location to get your location displayed on map for the treasure finding using map.",
+          "locationAlwaysPermission": "Allow GrapevineGO to use your location to get your location displayed on map for the treasure finding using map.",
+          "locationWhenInUsePermission": "Allow GrapevineGO to use your location to get your location displayed on map for the treasure finding using map."
+        }
+      ]
+    ],
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
+  }
+}
